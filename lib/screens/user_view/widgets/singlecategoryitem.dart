@@ -19,7 +19,7 @@ class _SingleCategoryItemState extends State<SingleCategoryItem> {
   bool isLoading=false;
   @override
   Widget build(BuildContext context) {
-    AppProvider appProvider=Provider.of<AppProvider>(
+    AppProviderr appProviderr=Provider.of<AppProviderr>(
       context,
     );
     return Card(
@@ -50,7 +50,7 @@ class _SingleCategoryItemState extends State<SingleCategoryItem> {
                         isLoading=true;
                       });
 
-                   await   appProvider.deleteCategoryFromFirebase(widget.singleCategory);
+                   await   appProviderr.deleteCategoryFromFirebase(widget.singleCategory);
                       setState(() {
                         isLoading=false;
                       });

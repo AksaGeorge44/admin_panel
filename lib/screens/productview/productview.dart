@@ -17,7 +17,7 @@ class ProductView extends StatefulWidget {
 class _ProductViewState extends State<ProductView> {
   @override
   Widget build(BuildContext context) {
-    AppProvider appProvider=Provider.of<AppProvider>(context);
+    AppProviderr appProviderr=Provider.of<AppProviderr>(context);
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -40,7 +40,7 @@ class _ProductViewState extends State<ProductView> {
               const SizedBox(height: 24,),
               GridView.builder(
                 shrinkWrap: true,
-                itemCount: appProvider.getProducts.length,
+                itemCount: appProviderr.getProducts.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     mainAxisSpacing: 20,
                     crossAxisSpacing: 20,
@@ -48,7 +48,7 @@ class _ProductViewState extends State<ProductView> {
                     crossAxisCount: 2),
 
                 itemBuilder: (ctx,index){
-                  ProductModel singleProduct= appProvider.getProducts[index];
+                  ProductModel singleProduct= appProviderr.getProducts[index];
                   return  SingleProductView(singleProduct:singleProduct,index: index);
                 },
               ),

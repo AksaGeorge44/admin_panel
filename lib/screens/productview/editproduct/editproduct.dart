@@ -44,7 +44,7 @@ class _EditProductState extends State<EditProduct> {
 
   @override
   Widget build(BuildContext context) {
-    AppProvider appProvider=Provider.of<AppProvider>(
+    AppProviderr appProviderr=Provider.of<AppProviderr>(
       context,
     );
     return Scaffold(
@@ -143,7 +143,7 @@ class _EditProductState extends State<EditProduct> {
 
                     );
 
-                    appProvider.updateProductList(widget.index, productModel);
+                    appProviderr.updateProductList(widget.index, productModel);
                     showMessage("Update Successfully");
                   }
                   else{
@@ -155,7 +155,7 @@ class _EditProductState extends State<EditProduct> {
 
                     );
 
-                    appProvider.updateProductList(widget.index, productModel);
+                    appProviderr.updateProductList(widget.index, productModel);
 
 
                     showMessage("Update Successfully");

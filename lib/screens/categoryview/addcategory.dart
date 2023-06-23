@@ -35,7 +35,7 @@ class _AddCategoryState extends State<AddCategory> {
   //TextEditingController name=TextEditingController();
   @override
   Widget build(BuildContext context) {
-    AppProvider appProvider=Provider.of<AppProvider>(
+    AppProviderr appProviderr=Provider.of<AppProviderr>(
       context,
     );
     return Scaffold(
@@ -94,7 +94,7 @@ class _AddCategoryState extends State<AddCategory> {
                   }
                   else if (image != null && name.text.isNotEmpty) {
 
-                    appProvider.addCategory(image!,name.text);
+                    appProviderr.addCategory(image!,name.text);
                     showMessage("Successfully Added");
                   }
 

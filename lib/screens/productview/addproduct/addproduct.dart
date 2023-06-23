@@ -41,7 +41,7 @@ CategoryModel? _selectedCategory;
 String? _selectedValue;
   @override
   Widget build(BuildContext context) {
-    AppProvider appProvider=Provider.of<AppProvider>(
+    AppProviderr appProviderr=Provider.of<AppProviderr>(
       context,
     );
     return Scaffold(
@@ -107,36 +107,36 @@ String? _selectedValue;
               // hintText: appProvider.getUserInformation.name,
             ),
           ),
-               SizedBox(height: 24,),
+               const SizedBox(height: 24,),
                Theme(
               data: Theme.of(context).copyWith(
-    canvasColor: Colors.white,
-    ),
+                      canvasColor: Colors.white,
+                   ),
 
                  child: DropdownButtonFormField(
                   value: _selectedCategory,
-    hint: const Text(
-    'please select category',
-    ),
+                    hint: const Text(
+                  'please select category',
+                 ),
 
-    isExpanded: true,
-    onChanged: (value) {
-    setState(() {
-    _selectedCategory = value;
-    });
-    },
+                   isExpanded: true,
+                     onChanged: (value) {
+                  setState(() {
+                    _selectedCategory = value;
+                          });
+                        },
 
 
-    items: appProvider.getCategories
-        .map((CategoryModel val) {
-    return DropdownMenuItem(
-    value: val,
-    child: Text(
-    val.name,
-    ),
-    );
-    }).toList(),
-    ),
+                   items: appProviderr.getCategories
+                    .map((CategoryModel val) {
+                 return DropdownMenuItem(
+                        value: val,
+                      child: Text(
+                        val.name,
+                     ),
+                       );
+                         }).toList(),
+                      ),
                ),
 
            const SizedBox(height: 24),
@@ -155,7 +155,7 @@ String? _selectedValue;
                   }
                   else  {
 
-                    appProvider.addProduct(image!,name.text,_selectedCategory!.id,price.text,description.text);
+                    appProviderr.addProduct(image!,name.text,_selectedCategory!.id,price.text,description.text);
                     showMessage("Update Successfully");
                   }
 

@@ -9,14 +9,14 @@ class UserView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppProvider appProvider=Provider.of<AppProvider>(context);
+    AppProviderr appProviderr=Provider.of<AppProviderr>(context);
 
     return Scaffold(
 
       appBar: AppBar(
         title: const Text("User View"),
       ),
-      body: Consumer<AppProvider>(
+      body: Consumer<AppProviderr>(
 
           builder:(context,value,child){
             return ListView.builder(

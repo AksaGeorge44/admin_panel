@@ -19,7 +19,7 @@ class _SingleProductViewState extends State<SingleProductView> {
   bool isLoading=false;
   @override
   Widget build(BuildContext context) {
-    AppProvider appProvider=Provider.of<AppProvider>(
+    AppProviderr appProviderr=Provider.of<AppProviderr>(
       context,
     );
 
@@ -71,7 +71,7 @@ class _SingleProductViewState extends State<SingleProductView> {
                       setState(() {
                         isLoading=true;
                       });
-                      await   appProvider.deleteProductsFromFirebase(widget.singleProduct);
+                      await   appProviderr.deleteProductsFromFirebase(widget.singleProduct);
                       setState(() {
                         isLoading=false;
                       });

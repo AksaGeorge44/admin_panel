@@ -20,7 +20,7 @@ class _SingleUserCardState extends State<SingleUserCard> {
   bool isLoading=false;
   @override
   Widget build(BuildContext context) {
-    AppProvider appProvider=Provider.of<AppProvider>(context);
+    AppProviderr appProviderr=Provider.of<AppProviderr>(context);
 
     return Card(
     child: Padding(
@@ -54,7 +54,7 @@ class _SingleUserCardState extends State<SingleUserCard> {
        isLoading=true;
 
        });
-        await appProvider.deleteUserFromFirebase(widget.userModel);
+        await appProviderr.deleteUserFromFirebase(widget.userModel);
          setState(() {
          isLoading=false;
 

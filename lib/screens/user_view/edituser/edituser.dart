@@ -38,7 +38,7 @@ class _EditUserState extends State<EditUser> {
   }
   @override
   Widget build(BuildContext context) {
-    AppProvider appProvider=Provider.of<AppProvider>(
+    AppProviderr appProviderr=Provider.of<AppProviderr>(
       context,
     );
     return Scaffold(
@@ -101,14 +101,14 @@ class _EditUserState extends State<EditUser> {
                       image: imageUrl,
                       name: name.text.isEmpty?null:name.text,
                     );
-                    appProvider.updateUserList(widget.index,userModel);
+                    appProviderr.updateUserList(widget.index,userModel);
                     showMessage("Update Successfully");
                   }
                   else{
     UserModel userModel = widget.userModel.copyWith(
     name: name.text.isEmpty?null:name.text,
     );
-    appProvider.updateUserList(widget.index,userModel);
+    appProviderr.updateUserList(widget.index,userModel);
     showMessage("Update Successfully");
     }
                   }

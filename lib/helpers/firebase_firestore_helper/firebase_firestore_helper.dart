@@ -75,6 +75,19 @@ try{
     }
   }
 
+  Future<UserModel> getUserInformation() async {
+    DocumentSnapshot<Map<String, dynamic>> querySnapshot =
+    await _firebaseFirestore
+        .collection("users")
+        .doc(FirebaseAuth.instance.currentUser!.uid)
+        .get();
+
+    return UserModel.fromJson(querySnapshot.data()!);
+  }
+
+
+
+
 
 
   Future<void>updateSingleCategory(CategoryModel  categoryModel)async{

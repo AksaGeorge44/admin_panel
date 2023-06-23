@@ -8,7 +8,7 @@ import '../../provider/provider.dart';
 class OrderList extends StatelessWidget {
 final String title;
   const OrderList({super.key, required this.title});
-List<OrderModel>getOrderList(AppProvider appProvider){
+List<OrderModel>getOrderList(AppProviderr appProvider){
   if(title=="Pending"){
     return appProvider.getPendingOrderList;
   }
@@ -29,7 +29,7 @@ List<OrderModel>getOrderList(AppProvider appProvider){
 }
   @override
   Widget build(BuildContext context) {
-    AppProvider appProvider=Provider.of<AppProvider>(context,listen: false);
+    AppProviderr appProviderr=Provider.of<AppProviderr>(context,listen: false);
 
     return Scaffold(
       appBar: AppBar(
@@ -38,14 +38,14 @@ List<OrderModel>getOrderList(AppProvider appProvider){
 
       body: Padding(
         padding: const EdgeInsets.fromLTRB(12, 12, 12, 0),
-        child: getOrderList(appProvider).isEmpty?Center(
+        child: getOrderList(appProviderr).isEmpty?Center(
           child: Text("$title is empty"),
         )
 
        : ListView.builder(
-                  itemCount: getOrderList(appProvider).length,
+                  itemCount: getOrderList(appProviderr).length,
                   itemBuilder: (context,index){
-                    OrderModel orderModel=getOrderList(appProvider)[index];
+                    OrderModel orderModel=getOrderList(appProviderr)[index];
                     return SingleOrderWidget(orderModel: orderModel);
 
                   },

@@ -1,5 +1,6 @@
 import 'package:admin_panel/helpers/firebase_options/firebase_options.dart';
 import 'package:admin_panel/provider/provider.dart';
+import 'package:admin_panel/provider1/provider.dart';
 import 'package:admin_panel/screens/homepage/homepage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +17,8 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<AppProvider>(
-      create: (context)=>AppProvider(),
+    return ChangeNotifierProvider<AppProviderr>(
+      create: (context)=>AppProviderr(),
         //..getUserListFun()
       //  ..getCategoriesListFun(),
       child: MaterialApp(

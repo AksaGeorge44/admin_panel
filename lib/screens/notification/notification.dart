@@ -17,7 +17,7 @@ class _NotificatonScreenState extends State<NotificatonScreen> {
   final TextEditingController _body=TextEditingController();
   @override
   Widget build(BuildContext context) {
-    AppProvider appProvider=Provider.of<AppProvider>(context,listen: false);
+    AppProviderr appProviderr=Provider.of<AppProviderr>(context,listen: false);
 
     return Scaffold(
       appBar: AppBar(
@@ -45,7 +45,7 @@ class _NotificatonScreenState extends State<NotificatonScreen> {
             const SizedBox(height: 12,),
             ElevatedButton(onPressed: (){
 
-              sendNotificatonToAllUsers(appProvider.getUsersToken);
+              sendNotificatonToAllUsers(appProviderr.getUsersToken);
             }, child: const Text("Send Notification!")),
           ],
         ),

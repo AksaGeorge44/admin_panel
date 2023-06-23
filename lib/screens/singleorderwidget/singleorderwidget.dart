@@ -17,7 +17,7 @@ class SingleOrderWidget extends StatefulWidget {
 class _SingleOrderWidgetState extends State<SingleOrderWidget> {
   @override
   Widget build(BuildContext context) {
-    AppProvider appProvider=Provider.of<AppProvider>(context);
+    AppProviderr appProviderr=Provider.of<AppProviderr>(context);
     return Padding(
       padding:
       const EdgeInsets.only(left: 12.0, top: 6.0),
@@ -83,7 +83,7 @@ class _SingleOrderWidgetState extends State<SingleOrderWidget> {
 
                      await   FirebaseFirestoreHelper.instance.updateOrder(widget.orderModel,"Delivery");
                      widget.orderModel.status="Delivery";
-                     appProvider.updatePendingOrder(widget.orderModel);
+                     appProviderr.updatePendingOrder(widget.orderModel);
                      setState(() {
 
                      });
@@ -112,14 +112,14 @@ class _SingleOrderWidgetState extends State<SingleOrderWidget> {
 
                       await    FirebaseFirestoreHelper.instance.updateOrder(widget.orderModel,"Cancel");
 
-                          appProvider.updateCancelPendingOrder(widget.orderModel);
+                          appProviderr.updateCancelPendingOrder(widget.orderModel);
                         }
                         else{
                           widget.orderModel.status="Cancel";
 
                           await    FirebaseFirestoreHelper.instance.updateOrder(widget.orderModel,"Cancel");
 
-                          appProvider.updateCancelDeliveryOrder(widget.orderModel);
+                          appProviderr.updateCancelDeliveryOrder(widget.orderModel);
 
                         }
 

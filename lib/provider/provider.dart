@@ -12,7 +12,7 @@ import '../models/ordermodel/ordermodel.dart';
 import '../models/usermodel/usermodel.dart';
 
 
-class AppProvider with ChangeNotifier {
+class AppProviderr with ChangeNotifier {
   List<UserModel>_userList=[];
   List<CategoryModel>_categoriesList=[];
 List<ProductModel>_productList=[];
@@ -198,18 +198,6 @@ double _totalEarning=0.0;
 
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

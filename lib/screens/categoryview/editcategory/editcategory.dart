@@ -39,7 +39,7 @@ class _EditCategoryState extends State<EditCategory> {
   //TextEditingController name=TextEditingController();
   @override
   Widget build(BuildContext context) {
-    AppProvider appProvider=Provider.of<AppProvider>(
+    AppProviderr appProviderr=Provider.of<AppProviderr>(
       context,
     );
     return Scaffold(
@@ -102,14 +102,14 @@ class _EditCategoryState extends State<EditCategory> {
                       image: imageUrl,
                       name: name.text.isEmpty?null:name.text,
                     );
-                    appProvider.updateCategoryList(widget.index,categoryModel);
+                    appProviderr.updateCategoryList(widget.index,categoryModel);
                     showMessage("Update Successfully");
                   }
                   else{
                     CategoryModel categoryModel = widget.categoryModel.copyWith(
                       name: name.text.isEmpty?null:name.text,
                     );
-                    appProvider.updateCategoryList(widget.index,categoryModel);
+                    appProviderr.updateCategoryList(widget.index,categoryModel);
                     showMessage("Update Successfully");
                   }
 
